@@ -3,16 +3,14 @@
 # Student Name: Braeden Wings
 # Assignment Number: Lab 3
 # Due Date: 02/02/2025
-# Purpose: 
-#
+# Purpose: To collect and process sales data for a department and calculates the manager's bonus based on a sales goal and the total sales of all the salespeople.
+# I used my knowledge of the python, what I've learned in my IT1114 class and from my Lab, as well as what I've learned from kaggle and other outside resources. Since I used Intellij's pycharm to do my coding, I've also gone and made sure that the code works in IDLE before I submitted.
 
 def sales (sales_goal):
     # will start numbering each of the sales people entered
     salesperson_number = 1
     # a variable to store the combined total of all salespeople entered
     total_sales_all = 0
-    # list to store sales data for all salespeople
-    salespeople_data = []
 
     # loop for enter the sales data for each salesperson added to the list
     while True:
@@ -52,8 +50,7 @@ def sales (sales_goal):
 
     return salesperson_number, sales_goal, total_sales_all, manager_bonus
 
-# block to make the function work and print the outputs needed for the lab
-if __name__ == "__main__":
+def sales_calculator():
     sales_goal = float(input("Enter the sales goal: "))
     # calls the function above
     salesperson_number, sales_goal, total_sales_all, manager_bonus = sales(sales_goal)
@@ -61,6 +58,10 @@ if __name__ == "__main__":
     # prints the outputs needed
     print("Department Monthly Sales and Commission")
     print("Number of Employees:", salesperson_number)
-    print("Department Sales Goal:", sales_goal)
+    print(f"Department Sales Goal: ${sales_goal:.2f}")
     print(f"Total Sales: ${total_sales_all:.2f}")
     print(f"Manager Bonus: ${manager_bonus:.2f}")
+
+# block to make the function work and print the outputs needed for the lab
+if __name__ == "__main__":
+    sales_calculator()
